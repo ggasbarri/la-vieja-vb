@@ -71,9 +71,10 @@
     End Function
 
     'Funcion que devuelve 0 si nadie ha ganado, 1 si gano el primer jugador o 2 si gano el segundo jugador
-    Function calcularGanador(ByVal matrizJugadas(,) As Char) As Integer
+    Function calcularGanador(ByVal matrizJugadas(,) As Char, ByVal numeroJugada As Integer) As Integer
 
         Dim valorFila, valorColumna As Char
+        Dim espacioEncontrado As Boolean
 
         calcularGanador = 0
 
@@ -137,6 +138,13 @@
 
         End If
 
+        If calcularGanador = 0 And numeroJugada = 9 Then
+
+            'Ganó la Vieja
+            calcularGanador = 4
+
+        End If
+
     End Function
 
     Function puedeInsertar(ByVal matrizJugadas(,) As Char, ByVal linearPos As Integer) As Boolean
@@ -170,8 +178,10 @@
         Dim nombre1, nombre2 As String
         Dim matrizJugadas(2, 2), symbol As Char
         Dim turnoActual As Integer 'Jugador 1 o Jugador 2
+        Dim numeroJugada As Integer
+        Dim partidasGanadas1, partidasGanadas2 As Integer
 
-        Dim ganador, linearPos As Integer '0, 1 (primer jugador) o 2 (segundo jugador)
+        Dim ganador, linearPos As Integer '0, 1 (primer jugador), 2 (segundo jugador) o 3 (La Vieja)
 
         Dim seguirJugando As Boolean
 
@@ -202,6 +212,7 @@
 
             turnoActual = 1
             ganador = 0
+            numeroJugada = 0
 
             'Iniciar la matriz de jugadas como vacia
             For i = 0 To 2
@@ -251,12 +262,14 @@
                     Console.WriteLine()
 
                     turnoActual = (turnoActual Mod 2) + 1 'Convierte 1 a 2 y 2 a 1
+                    numeroJugada += 1
 
-                    ganador = calcularGanador(matrizJugadas)
+                    ganador = calcularGanador(matrizJugadas, numeroJugada)
 
                 Else
 
                     Console.WriteLine("Posición inválida, es del 1 al 9 y no debe estar ocupada.")
+                    Console.WriteLine()
 
                 End If
 
@@ -266,18 +279,37 @@
             
             If ganador = 1 Then
 
+                partidasGanadas1 += 1
+
                 Console.WriteLine(nombre1)
+
+                Console.WriteLine("¡Felicidades!")
 
             ElseIf ganador = 2 Then
 
+                partidasGanadas2 += 1
+
                 Console.WriteLine(nombre2)
+
+                Console.WriteLine("¡Felicidades!")
+
+            Else
+
+                Console.WriteLine("La Vieja")
+
+                Console.WriteLine("¡Qué lástima!")
 
             End If
 
             Console.WriteLine()
 
-            Console.WriteLine("¡Felicidades!")
+            Console.WriteLine("Partidas ganadas: ")
 
+            Console.WriteLine(nombre1 & " = " & partidasGanadas1)
+
+            Console.WriteLine(nombre2 & " = " & partidasGanadas2)
+
+            Console.WriteLine()
             Console.WriteLine()
 
             Console.WriteLine("¿Seguir jugando?")
