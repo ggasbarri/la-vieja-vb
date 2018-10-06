@@ -1,0 +1,8 @@
+c:\users\gianfranco\documents\visual studio 2010\Projects\La Vieja\La Vieja\bin\Debug\La Vieja.exe
+c:\users\gianfranco\documents\visual studio 2010\Projects\La Vieja\La Vieja\bin\Debug\La Vieja.pdb
+c:\users\gianfranco\documents\visual studio 2010\Projects\La Vieja\La Vieja\bin\Debug\La Vieja.xml
+c:\users\gianfranco\documents\visual studio 2010\Projects\La Vieja\La Vieja\obj\x86\Debug\La_Vieja.Resources.resources
+c:\users\gianfranco\documents\visual studio 2010\Projects\La Vieja\La Vieja\obj\x86\Debug\La Vieja.vbproj.GenerateResource.Cache
+c:\users\gianfranco\documents\visual studio 2010\Projects\La Vieja\La Vieja\obj\x86\Debug\La Vieja.exe
+c:\users\gianfranco\documents\visual studio 2010\Projects\La Vieja\La Vieja\obj\x86\Debug\La Vieja.xml
+c:\users\gianfranco\documents\visual studio 2010\Projects\La Vieja\La Vieja\obj\x86\Debug\La Vieja.pdb
